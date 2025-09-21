@@ -16,25 +16,25 @@ class BoardArray : public Board {
         void add(Entry* entry) {
             
             int temp = index;
-    for (int i = 0; i < index; i++) {
-        if (entry->compare(&array[i])) {
+    for(int i = 0; i < index; i++){
+        if(entry->compare(&array[i])){
             temp = i;
             break;
         }
     }
 
-    if (index < SIZE) {
-        for (int i = index; i > temp; i--) {
+    if(index < SIZE){
+        for(int i = index; i > temp; i--){
             array[i] = array[i-1];
         }
         array[temp] = *entry;
         index++;
-    } else {
-        if (temp == index) {
+    }else{
+        if(temp == index){
             cout << entry->name << "'s score is too low to be added!" << endl;
             return;
         }
-        for (int i = SIZE-1; i > temp; i--) {
+        for(int i = SIZE-1; i > temp; i--){
             array[i] = array[i-1];
         }
         array[temp] = *entry;
