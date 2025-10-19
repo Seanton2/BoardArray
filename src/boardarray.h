@@ -49,7 +49,7 @@ public:
         }
     }
      ~BoardArray() {
-        delete[] array;  // free all Entry objects in the array
-        array = nullptr; // safety
+        delete[] array;  
+        array = nullptr; 
     }
 };
